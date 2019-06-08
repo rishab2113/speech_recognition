@@ -1,0 +1,116 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build aot --suppress-analytics --quiet --target lib/main.dart --output-dir /Users/rishabnayak/Desktop/Projects/speech_recognition/example/build/app/intermediates/flutter/release/android-arm --target-platform android-arm --release
+
+## exception
+
+ProcessException: ProcessException: Bad CPU type in executable
+  Command: /Users/rishabnayak/flutter/bin/cache/artifacts/engine/android-arm-release/darwin-x64/gen_snapshot --causal_async_stacks --deterministic --snapshot_kind=app-aot-blobs --vm_snapshot_data=/Users/rishabnayak/Desktop/Projects/speech_recognition/example/build/app/intermediates/flutter/release/android-arm/vm_snapshot_data --isolate_snapshot_data=/Users/rishabnayak/Desktop/Projects/speech_recognition/example/build/app/intermediates/flutter/release/android-arm/isolate_snapshot_data --vm_snapshot_instructions=/Users/rishabnayak/Desktop/Projects/speech_recognition/example/build/app/intermediates/flutter/release/android-arm/vm_snapshot_instr --isolate_snapshot_instructions=/Users/rishabnayak/Desktop/Projects/speech_recognition/example/build/app/intermediates/flutter/release/android-arm/isolate_snapshot_instr --no-sim-use-hardfp --no-use-integer-division /Users/rishabnayak/Desktop/Projects/speech_recognition/example/build/app/intermediates/flutter/release/android-arm/app.dill
+
+```
+#0      runCommandAndStreamOutput (package:flutter_tools/src/base/process.dart:142:27)
+<asynchronous suspension>
+#1      GenSnapshot.run (package:flutter_tools/src/base/build.dart:65:12)
+#2      AOTSnapshotter.build.<anonymous closure> (package:flutter_tools/src/base/build.dart:197:97)
+#3      AOTSnapshotter._timedStep (package:flutter_tools/src/base/build.dart:328:33)
+<asynchronous suspension>
+#4      AOTSnapshotter.build (package:flutter_tools/src/base/build.dart:197:43)
+<asynchronous suspension>
+#5      BuildAotCommand.runCommand (package:flutter_tools/src/commands/build_aot.dart:149:56)
+<asynchronous suspension>
+#6      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:488:18)
+<asynchronous suspension>
+#7      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:424:33)
+<asynchronous suspension>
+#8      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:29)
+<asynchronous suspension>
+#9      _rootRun (dart:async/zone.dart:1124:13)
+#10     _CustomZone.run (dart:async/zone.dart:1021:19)
+#11     _runZoned (dart:async/zone.dart:1516:10)
+#12     runZoned (dart:async/zone.dart:1463:12)
+#13     AppContext.run (package:flutter_tools/src/base/context.dart:152:18)
+<asynchronous suspension>
+#14     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:415:20)
+#15     CommandRunner.runCommand (package:args/command_runner.dart:197:27)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:396:21)
+<asynchronous suspension>
+#17     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:29)
+<asynchronous suspension>
+#18     _rootRun (dart:async/zone.dart:1124:13)
+#19     _CustomZone.run (dart:async/zone.dart:1021:19)
+#20     _runZoned (dart:async/zone.dart:1516:10)
+#21     runZoned (dart:async/zone.dart:1463:12)
+#22     AppContext.run (package:flutter_tools/src/base/context.dart:152:18)
+<asynchronous suspension>
+#23     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:356:19)
+<asynchronous suspension>
+#24     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:112:25)
+#25     new Future.sync (dart:async/future.dart:224:31)
+#26     CommandRunner.run (package:args/command_runner.dart:112:14)
+#27     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:242:18)
+#28     run.<anonymous closure> (package:flutter_tools/runner.dart:60:20)
+<asynchronous suspension>
+#29     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:29)
+<asynchronous suspension>
+#30     _rootRun (dart:async/zone.dart:1124:13)
+#31     _CustomZone.run (dart:async/zone.dart:1021:19)
+#32     _runZoned (dart:async/zone.dart:1516:10)
+#33     runZoned (dart:async/zone.dart:1463:12)
+#34     AppContext.run (package:flutter_tools/src/base/context.dart:152:18)
+<asynchronous suspension>
+#35     runInContext (package:flutter_tools/src/context_runner.dart:55:24)
+<asynchronous suspension>
+#36     run (package:flutter_tools/runner.dart:51:10)
+#37     main (package:flutter_tools/executable.dart:62:9)
+<asynchronous suspension>
+#38     main (file:///Users/rishabnayak/flutter/packages/flutter_tools/bin/flutter_tools.dart:8:3)
+#39     _startIsolate.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:298:32)
+#40     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:171:12)
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel master, v1.7.2-pre.22, on Mac OS X 10.15 19A471t, locale en-US)
+    • Flutter version 1.7.2-pre.22 at /Users/rishabnayak/flutter
+    • Framework revision 5180201fe1 (23 hours ago), 2019-06-05 15:28:19 -0700
+    • Engine revision 669ac3848d
+    • Dart version 2.3.2 (build 2.3.2-dev.0.1 9dcb026b26)
+    ✗ Downloaded executables cannot execute on host.
+      See https://github.com/flutter/flutter/issues/6207 for more information
+
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 28.0.3)
+    • Android SDK at /Users/rishabnayak/Library/Android/sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-28, build-tools 28.0.3
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1343-b01)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 11.0)
+    • Xcode at /Applications/Xcode-beta.app/Contents/Developer
+    • Xcode 11.0, Build version 11M336w
+    • CocoaPods version 1.7.1
+
+[✓] iOS tools - develop for iOS devices
+    • ios-deploy 1.9.4
+
+[✓] Android Studio (version 3.4)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin version 36.0.1
+    • Dart plugin version 183.6270
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1343-b01)
+
+[✓] VS Code (version 1.34.0)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.0.2
+
+[✓] Connected device (1 available)
+    • Pixel 3a • 94KAY0QPVJ • android-arm64 • Android 9 (API 28)
+
+! Doctor found issues in 1 category.
+```
